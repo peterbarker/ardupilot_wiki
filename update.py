@@ -75,6 +75,7 @@ PARAMETER_SITE = {
     'plane': 'ArduPlane',
     'antennatracker': 'AntennaTracker',
     'AP_Periph': 'AP_Periph',
+    'heli': 'Helicopter',
 }
 LOGMESSAGE_SITE = {
     'rover': 'Rover',
@@ -125,6 +126,8 @@ def fetchparameters(site=None, cache=None):
         targetfile = './%s/source/docs/parameters.rst' % key
         if key == 'AP_Periph':
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+        if key == 'heli':
+            targetfile = './copter/source/docs/Parameters-heli.rst'
         if cache:
             if not os.path.exists(targetfile):
                 raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))  # noqa
