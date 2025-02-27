@@ -791,7 +791,7 @@ def check_imports():
             pkg_resources.require(r)
         except pkg_resources.ResolutionError as ex:
             progress(ex)
-            fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % r)
+            fatal(f"({ex})\n Require {r}\nPlease run the wiki build setup script \"Sphinxsetup\"")
     debug("Imports OK")
 
 
